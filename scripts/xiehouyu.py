@@ -29,8 +29,8 @@ def downloader(url):
 
 if __name__ == '__main__':
     res = downloader('http://xhy.5156edu.com/html2/xhy.html')
-    for i in range(2, 282):
-        res += downloader(f'http://xhy.5156edu.com/html2/xhy_{i}.html')
+    # for i in range(2, 282):
+    #     res += downloader(f'http://xhy.5156edu.com/html2/xhy_{i}.html')
     print(len(res))
-    with open('xiehouyu.json', mode='w+', encoding='utf-8') as json_file:
+    with open('xiehouyu_2.json', mode='w+', encoding='utf-8') as json_file:
         json.dump(res, json_file, ensure_ascii=False)

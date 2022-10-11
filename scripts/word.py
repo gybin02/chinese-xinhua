@@ -47,12 +47,14 @@ def downloader(url):
                     'radicals': td[10].text.strip(),\
                     'explanation': explanation[explanation.find('\r\n'):].strip(),\
                     'more': td[14].text.strip()})
+        print(res)
     return res
 
 if __name__ == '__main__':
+    print("hello world")
     res = downloader('http://www.zd9999.com/zi/index.htm')
-    for i in range(2, 102):
-        res += downloader(f'http://www.zd9999.com/zi/index_{i}.htm')
+    # for i in range(2, 3):
+    #     res += downloader(f'http://www.zd9999.com/zi/index_{i}.htm')
     print(len(res))
     with open('word.json', mode='w+', encoding='utf-8') as json_file:
         json.dump(res, json_file, ensure_ascii=False)
